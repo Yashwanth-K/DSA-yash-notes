@@ -24,3 +24,6 @@ public class KthSmallest{
         System.out.println(k + "th smallest element is: " + kthSmallest);
     }
 }
+
+
+
