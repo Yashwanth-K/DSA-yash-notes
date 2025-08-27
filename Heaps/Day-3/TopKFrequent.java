@@ -11,18 +11,18 @@ public class TopKFrequent{
         }
 
         // Min-heap by frequency
-        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[1] - b[1]);
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[1] - b[1]);
 
         // Keep only top k frequent elements in heap
         for (int key : map.keySet()) {
-            pq.add(new int[] { key, map.get(key) });
-            if (pq.size() > k) pq.poll();
+            minHeap.add(new int[] { key, map.get(key) });
+            if (minHeap.size() > k) minHeap.poll();
         }
 
         // Extract top k elements from heap
         int[] ans = new int[k];
         for (int i = k - 1; i >= 0; i--) {
-            ans[i] = pq.poll()[0];
+            ans[i] = minHeap.poll()[0];
         }
         return ans;
     }
