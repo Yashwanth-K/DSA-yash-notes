@@ -88,3 +88,5 @@ for (int key : map.keySet()) {
 
 **Tip:**  
 Always clarify heap type (min/max), comparator logic, and heap size management in your code and explanations during interviews.
+
+
